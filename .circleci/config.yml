@@ -7,6 +7,7 @@ jobs:
 
     steps:
       - checkout
+      pip install --upgrade pip
 
       # Install dependencies
       - run: pip install -r requirements.txt
