@@ -8,11 +8,11 @@ jobs:
     steps:
       - checkout
 
-      # Install dependencies
-      - run: pip install requests
-
-      # Run tests
-      - run: python github_api.py
+      # Run the Python script
+      - run:
+          name: Run Python script
+          command: |
+            python C:/Users/panwa/PycharmProjects/pythonProject10/venv/Scripts/github_api.py
 
 workflows:
   version: 2
