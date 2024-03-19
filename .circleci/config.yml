@@ -7,10 +7,9 @@ jobs:
 
     steps:
       - checkout
-      pip install --upgrade pip
 
       # Install dependencies
-      - run: pip install -r requirements.txt
+      - run: pip install requests
 
       # Run tests
       - run: python github_api.py
