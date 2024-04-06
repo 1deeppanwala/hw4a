@@ -12,7 +12,7 @@ jobs:
       - run: 
           command: |
             pip install pytest
-            pytest --junitxml=test-results/junit.xml test github api.py
+            pytest --junitxml=test-results/junit.xml test_github_api.py
       - store_test_results:
           path: test-results
 
