@@ -1,21 +1,22 @@
 version: 2.1
 
+orbs: 
+    python: circleci/python@2.0.1
+  
 jobs:
-  build:
+  build-and-test:
     docker:
-      - image: python:3.9
-
+      - image: cimg/python:3.10.2
     steps:
       - checkout
-
-      # Run the Python script
-      - run:
-          name: Run Python script
+      - run: 
           command: |
-            python C:/Users/panwa/PycharmProjects/pythonProject10/venv/Scripts/github_api.py
+            pip install pytest
+            pytest --junitxml=test-results/junit.xml test_github.py
+      - store_test_results:
+          path: test-results
 
 workflows:
-  version: 2
-  build:
+  testing_triangles:
     jobs:
-      - build
+      - build-and-test
